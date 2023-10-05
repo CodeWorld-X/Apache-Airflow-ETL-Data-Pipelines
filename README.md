@@ -38,12 +38,12 @@ In this task you will author an Apache Airflow DAG that will:
 ### 3. Create a DAG
 
 * Library import
-
-    from datetime import timedelta 
-    from airflow import DAG 
+'''
+    from datetime import timedelta
+    from airflow import DAG
     from airflow.operators.bash_operator import BashOperator 
     from airflow.utils.dates import days_ago
-  
+'''  
 ![image](https://github.com/CodeWorld-X/Apache-Airflow-ETL-Data-Pipelines/assets/129016922/54649443-4eb4-408a-80ee-fa178097b0ca)
 
 * Define DAG arguments
