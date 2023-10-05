@@ -14,23 +14,31 @@ In this task you will author an Apache Airflow DAG that will:
 
 # PROCESS
 ### 1. Create a directory structure for staging area as follows:
+
     sudo mkdir -p /home/project/airflow/dags/finalassignment/staging
+    
 ![image](https://github.com/CodeWorld-X/Apache-Airflow-ETL-Data-Pipelines/assets/129016922/5baa5ae1-0e12-4786-aca9-b2421d385fd6)
+
 ### 2. The compressed file contains data of toll stations of different companies.
 
     tolldata.tgz (tollplaza-data.tsv, vehicle-data.csv, payment-data.txt, fileformats.txt)
     
 - File "tollplaza-data.tsv"
+
 ![image](https://github.com/CodeWorld-X/Apache-Airflow-ETL-Data-Pipelines/assets/129016922/bd32978c-9e29-4505-a223-152babc1661c)
 
 - File "vehicle-data.csv"
+  
 ![image](https://github.com/CodeWorld-X/Apache-Airflow-ETL-Data-Pipelines/assets/129016922/b0f618a7-c0bc-4ab0-8bdd-525aac72c42d)
 
 - File "payment-data.txt"
+  
 ![image](https://github.com/CodeWorld-X/Apache-Airflow-ETL-Data-Pipelines/assets/129016922/821ff660-f01e-4f93-b54b-e1b0f741e9fc)
 
 ### 3. Create a DAG
+
 * Library import
+
     from datetime import timedelta 
     from airflow import DAG 
     from airflow.operators.bash_operator import BashOperator 
@@ -66,6 +74,7 @@ In this task you will author an Apache Airflow DAG that will:
 * Create a task to unzip data
   
 - Create a task to unzip data
+  
     unzip_data = BashOperator( 
     task_id='unzip_data', 
     bash_command='tar -xvzf /home/linux/airflow/dags/finalassignment/tolldata.tgz -C /home/linux/airflow/dags/finalassignment', 
